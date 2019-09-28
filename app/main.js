@@ -1,5 +1,3 @@
-import {ControllerProduct} from '../components/product/ControllerProduct.js'
-import {ControllerSearch} from '../components/search/ControllerSearch.js'
+import {Router} from '../src/Router.js';
 
-const product = new ControllerProduct();
-const search = new ControllerSearch();
+const router = new Router();
