@@ -5,11 +5,11 @@ export class ControllerProduct {
   constructor() {
     this.model = new ModelProduct(this);
     this.view = new ViewProduct(this);
-    this.getProduct();
+    this.actionGetProduct();
   }
 
-  getProduct() {
-    this.model.getProductJSON();
+  actionGetProduct() {
+    this.model.getProduct();
   }
 
   showProduct(data) {
