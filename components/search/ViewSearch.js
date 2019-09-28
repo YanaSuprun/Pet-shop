@@ -1,6 +1,14 @@
 export class ViewSearch {
-  constructor(contr) {
-    this.controller = contr;
-    this.input = document.getElementById('search');
+  constructor(controller) {
+    this.controller = controller;
+    this.search = document.getElementById('search');
+  }
+
+  render() {
+    this.search.innerHTML = `
+      <div class="columns medium-6">
+        <input type="text" placeholder="Search">
+      </div>
+    `
   }
 }

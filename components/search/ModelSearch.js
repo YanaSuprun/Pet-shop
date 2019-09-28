@@ -1,5 +1,5 @@
 export class ModelSearch {
-  constructor() {
-    
+  constructor(controller) {
+    this.controller = controller;
   }
 }
