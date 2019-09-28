@@ -7,8 +7,14 @@ export class ViewSearch {
   render() {
     this.search.innerHTML = `
       <div class="columns medium-6">
-        <input type="text" placeholder="Search">
+        <input id="search-input" type="search" placeholder="Search">
       </div>
     `
   }
+
+  changeOnInput() {
+    document.getElementById('search-input');
+    document.addEventListener('input', this.controller.showSortOnInput.bind(this.controller));
+  }
+
 }
