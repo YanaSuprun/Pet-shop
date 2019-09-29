@@ -14,6 +14,7 @@ export class ControllerProduct {
 
   showProduct(data) {
     this.view.render(data);
+    this.view.addToBasket();
   }
 
 }
