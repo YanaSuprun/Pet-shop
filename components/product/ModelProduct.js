@@ -4,7 +4,7 @@ export class ModelProduct {
   }
 
   getProduct() {
-    fetch('../data/goods.json').then(data => data.json()).then(arr => {
+    fetch('./data/goods.json').then(data => data.json()).then(arr => {
       this.setToLocalStorage(arr);
       this.controller.showProduct(arr);
     });
