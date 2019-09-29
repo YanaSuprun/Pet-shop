@@ -14,7 +14,13 @@ export class ControllerProduct {
 
   showProduct(data) {
     this.view.render(data);
-    this.view.addToBasket();
+  }
+
+  actionGetToBasket(ev) {
+    console.dir(ev)
+    // if(ev.target.classList.contains('button')) {
+      // this.view.addToBasket();
+    // }
   }
 
 }
