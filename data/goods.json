@@ -542,7 +542,7 @@
   {
     "id": 31,
     "type": "bird",
-    "url": "data/img/pets/bird/canary1.jpg",
+    "url": "data/img/bird/canary1.jpg",
     "name": "Canary",
     "price": 50,
     "quantity": 2,
@@ -559,7 +559,7 @@
   {
     "id": 32,
     "type": "bird",
-    "url": "data/img/pets/bird/aratingi1.jpg",
+    "url": "data/img/bird/aratingi1.jpg",
     "name": "Aratingi",
     "price": 100,
     "quantity": 2,
@@ -576,7 +576,7 @@
   {
     "id": 33,
     "type": "bird",
-    "url": "data/img/pets/bird/сockatoo1.jpg",
+    "url": "data/img/bird/сockatoo1.jpg",
     "name": "Cockatoo",
     "price": 2000,
     "quantity": 4,
@@ -593,7 +593,7 @@
   {
     "id": 34,
     "type": "bird",
-    "url": "data/img/pets/bird/sova1.jpg",
+    "url": "data/img/bird/sova1.jpg",
     "name": "Owl",
     "price": 6000,
     "quantity": 1,
@@ -610,7 +610,7 @@
   {
     "id": 35,
     "type": "bird",
-    "url": "data/img/pets/bird/jaco1.jpg",
+    "url": "data/img/bird/jaco1.jpg",
     "name": "Jaco",
     "price": 600,
     "quantity": 4,
@@ -627,7 +627,7 @@
   {
     "id": 36,
     "type": "bird",
-    "url": "data/img/pets/bird/monkparakeet1.jpg",
+    "url": "data/img/bird/monkparakeet1.jpg",
     "name": "Monk parakeet",
     "price": 900,
     "quantity": 2,
@@ -644,7 +644,7 @@
   {
     "id": 37,
     "type": "bird",
-    "url": "data/img/pets/bird/bluewinged1.jpg",
+    "url": "data/img/bird/bluewinged1.jpg",
     "name": "Blue-winged",
     "price": 1500,
     "quantity": 1,
@@ -661,7 +661,7 @@
   {
     "id": 38,
     "type": "bird",
-    "url": "data/img/pets/bird/westernrosella1.jpg",
+    "url": "data/img/bird/westernrosella1.jpg",
     "name": "Western rosella",
     "price": 850,
     "quantity": 3,
@@ -678,7 +678,7 @@
   {
     "id": 39,
     "type": "bird",
-    "url": "data/img/pets/bird/jandayaparakeet1.jpg",
+    "url": "data/img/bird/jandayaparakeet1.jpg",
     "name": "Jandaya parakeet",
     "price": 1150,
     "quantity": 1,
@@ -695,7 +695,7 @@
   {
     "id": 40,
     "type": "bird",
-    "url": "data/img/pets/bird/magpie1.jpg",
+    "url": "data/img/bird/magpie1.jpg",
     "name": "Magpie",
     "price": 350,
     "quantity": 3,

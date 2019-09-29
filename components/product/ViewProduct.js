@@ -3,11 +3,9 @@
 export class ViewProduct {
   constructor(controller) {
     this.controller = controller;
-    // this.templater = new Templater('../components/product/Product.html')
     this.products = document.getElementById('products');
-    // this.addToBasket();
-    this.products.addEventListener('click', this.addToBasket.bind(this.controller));
-    // this.purchase = document.getElementById('purchase');
+    this.products.addEventListener('click', this.controller.actionAddToBasket.bind(this.controller));
+    // this.templater = new Templater('../components/product/Product.html');
   }
 
   // render(data) {
@@ -37,14 +35,10 @@ export class ViewProduct {
   }
 
   addToBasket(ev) {
-    let target = ev.target;
-    if(target.classList.contains('purchase')) {
-      this.actionGetToBasket(target.getAttribute('elem'));
+    let targetElem = ev.target;
+    if(targetElem.classList.contains('purchase')) {
+      targetElem.classList.toggle('alert');
+      targetElem.innerHTML = 'Added';
     }
-    // this.purchase = document.querySelectorAll('.purchase');
-    // console.log('hello');
-    // console.log(purchase);
-    // this.products.addEventListener('click', this.controller.actionGetToBasket.bind(this.controller));
-    // console.log('ok')
   }
 }
