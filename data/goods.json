@@ -382,7 +382,7 @@
   {
     "id": 21,
     "type": "fish",
-    "url": "data/img/pets/fish/astronotus.jpg",
+    "url": "data/img/fish/astronotus1.jpg",
     "name": "Astronotus",
     "price": 50,
     "quantity": 15,
@@ -398,7 +398,7 @@
   {
     "id": 22,
     "type": "fish",
-    "url": "data/img/pets/fish/coryphaena.jpg",
+    "url": "data/img/fish/coryphaena1.jpg",
     "name": "Coryphaena hippurus",
     "price": 220,
     "quantity": 5,
@@ -414,7 +414,7 @@
   {
     "id": 23,
     "type": "fish",
-    "url": "data/img/pets/fish/betta.jpg",
+    "url": "data/img/fish/betta1.jpg",
     "name": "Betta splendens",
     "price": 920,
     "quantity": 5,
@@ -430,7 +430,7 @@
   {
     "id": 24,
     "type": "fish",
-    "url": "data/img/pets/fish/ancistrus.jpg",
+    "url": "data/img/fish/ancistrus1.jpg",
     "name": "Ancistrus",
     "price": 20,
     "quantity": 50,
@@ -446,7 +446,7 @@
   {
     "id": 25,
     "type": "fish",
-    "url": "data/img/pets/fish/guppi.jpg",
+    "url": "data/img/fish/guppi1.jpg",
     "name": "Guppi",
     "price": 10,
     "quantity": 2,
@@ -462,7 +462,7 @@
   {
     "id": 26,
     "type": "fish",
-    "url": "data/img/pets/fish/goldfish.jpg",
+    "url": "data/img/fish/goldfish1.jpg",
     "name": "Goldfish",
     "price": 15,
     "quantity": 7,
@@ -478,7 +478,7 @@
   {
     "id": 27,
     "type": "fish",
-    "url": "data/img/pets/fish/dwarfgourami.jpg",
+    "url": "data/img/fish/dwarfgourami1.jpg",
     "name": "Dwarf gourami",
     "price": 35,
     "quantity": 2,
@@ -494,7 +494,7 @@
   {
     "id": 28,
     "type": "fish",
-    "url": "data/img/pets/fish/pygmycorydoras.jpg",
+    "url": "data/img/fish/pygmycorydoras1.jpg",
     "name": "Pygmy corydoras",
     "price": 5,
     "quantity": 8,
@@ -510,7 +510,7 @@
   {
     "id": 29,
     "type": "fish",
-    "url": "data/img/pets/fish/pearldanio.jpg",
+    "url": "data/img/fish/danio1.jpg",
     "name": "Pearl danio",
     "price": 20,
     "quantity": 25,
@@ -526,7 +526,7 @@
   {
     "id": 30,
     "type": "fish",
-    "url": "data/img/pets/fish/kamfa.jpg",
+    "url": "data/img/fish/kamfa1.jpg",
     "name": "Kamfa",
     "price": 75,
     "quantity": 2,
@@ -542,7 +542,7 @@
   {
     "id": 31,
     "type": "bird",
-    "url": "data/img/pets/bird/canary.jpg",
+    "url": "data/img/pets/bird/canary1.jpg",
     "name": "Canary",
     "price": 50,
     "quantity": 2,
@@ -559,7 +559,7 @@
   {
     "id": 32,
     "type": "bird",
-    "url": "data/img/pets/bird/aratingi.jpg",
+    "url": "data/img/pets/bird/aratingi1.jpg",
     "name": "Aratingi",
     "price": 100,
     "quantity": 2,
@@ -576,7 +576,7 @@
   {
     "id": 33,
     "type": "bird",
-    "url": "data/img/pets/bird/сockatoo.jpg",
+    "url": "data/img/pets/bird/сockatoo1.jpg",
     "name": "Cockatoo",
     "price": 2000,
     "quantity": 4,
@@ -593,7 +593,7 @@
   {
     "id": 34,
     "type": "bird",
-    "url": "data/img/pets/bird/sova.jpg",
+    "url": "data/img/pets/bird/sova1.jpg",
     "name": "Owl",
     "price": 6000,
     "quantity": 1,
@@ -610,7 +610,7 @@
   {
     "id": 35,
     "type": "bird",
-    "url": "data/img/pets/bird/jaco.jpg",
+    "url": "data/img/pets/bird/jaco1.jpg",
     "name": "Jaco",
     "price": 600,
     "quantity": 4,
@@ -627,7 +627,7 @@
   {
     "id": 36,
     "type": "bird",
-    "url": "data/img/pets/bird/monkparakeet.jpg",
+    "url": "data/img/pets/bird/monkparakeet1.jpg",
     "name": "Monk parakeet",
     "price": 900,
     "quantity": 2,
@@ -644,7 +644,7 @@
   {
     "id": 37,
     "type": "bird",
-    "url": "data/img/pets/bird/bluewinged.jpg",
+    "url": "data/img/pets/bird/bluewinged1.jpg",
     "name": "Blue-winged",
     "price": 1500,
     "quantity": 1,
@@ -661,7 +661,7 @@
   {
     "id": 38,
     "type": "bird",
-    "url": "data/img/pets/bird/westernrosella.jpg",
+    "url": "data/img/pets/bird/westernrosella1.jpg",
     "name": "Western rosella",
     "price": 850,
     "quantity": 3,
@@ -678,7 +678,7 @@
   {
     "id": 39,
     "type": "bird",
-    "url": "data/img/pets/bird/jandayaparakeet.jpg",
+    "url": "data/img/pets/bird/jandayaparakeet1.jpg",
     "name": "Jandaya parakeet",
     "price": 1150,
     "quantity": 1,
@@ -695,7 +695,7 @@
   {
     "id": 40,
     "type": "bird",
-    "url": "data/img/pets/bird/magpie.jpg",
+    "url": "data/img/pets/bird/magpie1.jpg",
     "name": "Magpie",
     "price": 350,
     "quantity": 3,
