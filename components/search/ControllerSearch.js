@@ -15,7 +15,7 @@ export class ControllerSearch {
   }
 
   showSortOnInput(ev) {
-    this.model.sortOnInput(ev.target.value);
+    this.model.getSearchedList(ev.target.value);
   }
 
   changeProductList(data) {

@@ -3,7 +3,7 @@ export class ModelSearch {
     this.controller = controller;
   }
 
-  sortOnInput(str) {
+  getSearchedList(str) {
     const data = JSON.parse(localStorage.getItem('products'));
     const val = str.trim();
     const result = [];
