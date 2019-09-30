@@ -6,9 +6,7 @@ export class ViewSearch {
 
   render() {
     this.search.innerHTML = `
-      <div class="columns medium-6">
-        <input id="search-input" type="search" placeholder="Search">
-      </div>
+      <input id="search-input" type="search" placeholder="Search">
     `
   }
 
