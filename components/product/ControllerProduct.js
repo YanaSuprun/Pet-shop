@@ -19,4 +19,9 @@ export class ControllerProduct {
   actionAddToBasket(ev) {
     this.view.addToBasket(ev);
   }
+
+  getLocalStorageData() {
+    this.model.getFromLocalStorage();
+    console.log(getFromLocalStorage());
+  }
 }

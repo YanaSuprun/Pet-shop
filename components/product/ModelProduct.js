@@ -16,4 +16,8 @@ export class ModelProduct {
   setToLocalStorage(arr) {
     localStorage.setItem('products', JSON.stringify(arr))
   }
+
+  getFromLocalStorage() {
+    return JSON.parse(localStorage.getItem('products'));
+  }
 }
