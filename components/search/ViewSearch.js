@@ -16,5 +16,4 @@ export class ViewSearch {
     document.getElementById('search-input');
     document.addEventListener('input', this.controller.showListOnInput.bind(this.controller));
   }
-
 }

@@ -15,10 +15,7 @@ export class ControllerSearch {
   }
 
   showListOnInput(ev) {
-    this.model.getSearchedList(ev.target.value);
-  }
-
-  changeProductList(data) {
-    this.router.controllerProduct.showProduct(data);
+    let arr = this.model.getSearchedList(ev.target.value);
+    this.router.controllerProduct.showProduct(arr);
   }
 }
