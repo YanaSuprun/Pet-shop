@@ -20,7 +20,7 @@ export class ControllerProduct {
   getBuyClick(ev) {
     let targetElem = ev.target;
     if(targetElem.classList.contains('purchase')) {
-      this.view.changeButtonOnClick(ev, targetElem);
+      this.view.changeButtonOnClick(targetElem);
       this.router.controllerBasket.increaseCounter(ev);
     }
   }

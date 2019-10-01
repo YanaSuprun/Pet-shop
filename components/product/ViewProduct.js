@@ -13,18 +13,20 @@ export class ViewProduct {
             <img src="${elem.url}">
             <div class="card-section">
               <h4>${elem.name}</h4>
-              <p>It has an easy to override visual style, and is appropriately subdued.</p>
+              <h5>Price: ${elem.price}$</h5>
+              <p>Quantity: ${elem.quantity}</p>
+              <p>Color: ${elem.color}</p>
             </div>
-            <button elem="${elem}" class="purchase hollow button">Add to basket</button>
+            <button elem="${elem}" id="${elem.id}"class="purchase hollow button">Add to basket</button>
           </div>
         </div>`
       }).join('')}
     `
   }
 
-  changeButtonOnClick(ev, targetElem) {
-    targetElem.classList.toggle('alert');
+  changeButtonOnClick(targetElem) {
+    targetElem.classList.add('alert');
     targetElem.innerHTML = 'Added';
-    console.log(targetElem.parentNode);
+    console.log(targetElem);
   }
 }
