@@ -1,21 +1,9 @@
-// Templater doesn't work yet ----import { Templater } from '/src/Templater.js';
-
 export class ViewProduct {
   constructor(controller) {
     this.controller = controller;
     this.products = document.getElementById('products');
-    this.products.addEventListener('click', this.controller.actionAddToBasket.bind(this.controller));
-    // this.templater = new Templater('../components/product/Product.html');
+    this.products.addEventListener('click', this.controller.getBuyClick.bind(this.controller));
   }
-
-  // render(data) {
-  //   this.products.innerHTML = `
-  //   hello
-  //   ${data.map(elem => {
-  //     return this.templater.load(elem, products)
-  //   })}
-  //   `
-  // }
 
   render(data) {
     this.products.innerHTML = `
@@ -34,11 +22,9 @@ export class ViewProduct {
     `
   }
 
-  addToBasket(ev) {
-    let targetElem = ev.target;
-    if(targetElem.classList.contains('purchase')) {
-      targetElem.classList.toggle('alert');
-      targetElem.innerHTML = 'Added';
-    }
+  changeButtonOnClick(ev, targetElem) {
+    targetElem.classList.toggle('alert');
+    targetElem.innerHTML = 'Added';
+    console.log(targetElem.parentNode);
   }
 }
