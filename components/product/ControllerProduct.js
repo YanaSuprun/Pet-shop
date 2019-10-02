@@ -13,7 +13,7 @@ export class ControllerProduct {
     this.model.getProduct();
   }
 
-  showProduct(data) {
+  showProducts(data) {
     this.view.render(data);
   }
 

@@ -9,7 +9,7 @@ export class ModelProduct {
     // fetch(this.noCors + this.api).then(data => data.json()).then(arr => {
     fetch('./data/goods.json').then(data => data.json()).then(arr => {
       this.setToLocalStorage(arr);
-      this.controller.showProduct(arr);
+      this.controller.showProducts(arr);
     });
   }
 

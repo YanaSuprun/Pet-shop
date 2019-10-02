@@ -8,7 +8,7 @@ export class ModelCategories {
     return [...new Set(this.data.map(elem => elem.type.toUpperCase()))];
   };
 
-  getCategory(pet) {
+  getOneCategory(pet) {
     if(pet !== 'ALL') {
       return this.data.filter(elem => elem.type.toLowerCase() === pet.toLowerCase());
     }

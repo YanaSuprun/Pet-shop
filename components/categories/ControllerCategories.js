@@ -6,17 +6,17 @@ export class ControllerCategories {
     this.router = router;
     this.model = new ModelCategories(this);
     this.view = new ViewCategories(this);
-    this.actionGetCategories();
+    this.showCategories();
   };
 
-  actionGetCategories() {
+  showCategories() {
     const categories = this.model.getAllCategories();
-    this.view.render(categories);
+    this.view.renderCategories(categories);
   };
 
-  actionShowCategory(ev) {
-    let pet = this.view.showCategory(ev);
-    let data = this.model.getCategory(pet);
-    this.router.controllerProduct.showProduct(data);
+  showOneCategory(ev) {
+    let pet = this.view.getTargetCategory(ev);
+    let data = this.model.getOneCategory(pet);
+    this.router.controllerProduct.showProducts(data);
   };
 }

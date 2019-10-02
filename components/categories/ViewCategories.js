@@ -2,21 +2,21 @@ export class ViewCategories {
   constructor(controller) {
     this.controller = controller;
     this.categories = document.getElementById('categories');
-    this.categories.addEventListener('click', this.controller.actionShowCategory.bind(this.controller));
+    this.categories.addEventListener('click', this.controller.showOneCategory.bind(this.controller));
   };
 
-  render(data) {
+  renderCategories(data) {
     this.categories.innerHTML = `
-      <button class="hollow button">ALL</button>
+      <button class="hollow button pets">ALL</button>
       ${data.map(elem => {
-        return `<button class="hollow button">${elem}</button>`
+        return `<button class="hollow button pets">${elem}</button>`
       }).join(' ')}
     `
   };
 
-  showCategory(ev) {
+  getTargetCategory(ev) {
     let targetElem = ev.target;
-    if(targetElem.classList.contains('button')) {
+    if(targetElem.classList.contains('pets')) {
       targetElem.classList.add('active-category');
       return targetElem.textContent;
     };

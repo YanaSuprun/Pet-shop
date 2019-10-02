@@ -7,15 +7,15 @@ export class ControllerSearch {
     this.model = new ModelSearch(this);
     this.view = new ViewSearch(this);
     this.showSearch();
-  }
+  };
 
   showSearch() {
-    this.view.render();
-    this.view.changeOnInput();
-  }
+    this.view.renderSearch();
+    this.view.getInputEvent();
+  };
 
   showListOnInput(ev) {
-    let arr = this.model.getSearchedList(ev.target.value);
-    this.router.controllerProduct.showProduct(arr);
-  }
+    let data = this.model.getSearchedData(ev.target.value);
+    this.router.controllerProduct.showProducts(data);
+  };
 }
