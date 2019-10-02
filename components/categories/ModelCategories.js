@@ -9,18 +9,18 @@ export class ModelCategories {
     return [...new Set(this.data.map(elem => elem.type))];
   };
 
-  getOneCategory(pet) {
-    if(pet !== 'ALL') {
-      return this.data.filter(elem => elem.type.toLowerCase() === pet.toLowerCase());
-    }
-    return this.data;
-  };
-
   setCategoriesToLS() {
     const allCategories = this.getAllCategories();
     allCategories.forEach(category => {
       let categoryData = this.data.filter(elem => elem.type === category);
       localStorage.setItem(category, JSON.stringify(categoryData))
     });
+  };
+
+  getOneCategory(pet) {
+    if(pet !== 'all') {
+      return JSON.parse(localStorage.getItem(pet));
+    } 
+    return this.data;
   };
 }

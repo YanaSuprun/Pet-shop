@@ -18,7 +18,7 @@ export class ViewCategories {
     let targetElem = ev.target;
     if(targetElem.classList.contains('pets')) {
       targetElem.classList.add('active-category');
-      return targetElem.textContent;
+      return targetElem.textContent.toLowerCase();
     };
   };
 }

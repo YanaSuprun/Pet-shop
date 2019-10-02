@@ -18,5 +18,6 @@ export class ControllerCategories {
     let pet = this.view.getTargetCategory(ev);
     let data = this.model.getOneCategory(pet);
     this.router.controllerProduct.showProducts(data);
+    // this.router.controllerFilter.showFilter(data);
   };
 }
