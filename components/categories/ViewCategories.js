@@ -9,7 +9,7 @@ export class ViewCategories {
     this.categories.innerHTML = `
       <button class="hollow button pets">ALL</button>
       ${data.map(elem => {
-        return `<button class="hollow button pets">${elem}</button>`
+        return `<button class="hollow button pets">${elem.toUpperCase()}</button>`
       }).join(' ')}
     `
   };
