@@ -11,10 +11,10 @@ export class ControllerBasket {
 
   showBasket() {
     let basketData = this.model.getPurchase();
-    this.view.render();
+    this.view.renderBasket();
   };
 
-  increaseCounter(event) {
+  changeBasket(event) {
     this.view.changeCounter(this.productCounter+=1);
   };
 

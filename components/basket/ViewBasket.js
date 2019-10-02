@@ -4,7 +4,7 @@ export class ViewBasket {
     this.basket = document.getElementById('basket');
   };
 
-  render(quant = 0) {
+  renderBasket(quant = 0) {
     this.basket.innerHTML = `
     <button type="button" data-open="exampleModal1" class="button alert">
       <i class="fas fa-shopping-cart"></i> 

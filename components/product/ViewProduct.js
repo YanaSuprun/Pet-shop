@@ -5,7 +5,7 @@ export class ViewProduct {
     this.products.addEventListener('click', this.controller.getBuyClick.bind(this.controller));
   }
 
-  render(data) {
+  renderProducts(data) {
     this.products.innerHTML = `
       ${data.map(elem => {
         return `<div class="columns medium-3">
