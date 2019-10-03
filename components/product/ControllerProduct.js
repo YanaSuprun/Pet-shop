@@ -17,10 +17,11 @@ export class ControllerProduct {
     this.view.renderProducts(data);
   };
 
-  getBuyClick(ev) {
+  getPurchase(ev) {
     let targetElem = ev.target;
     if(targetElem.classList.contains('purchase')) {
       this.view.changeButtonOnClick(targetElem);
+      this.model.setPurchaseToLS(targetElem);
       this.router.controllerBasket.changeBasket(ev);
     };
   };

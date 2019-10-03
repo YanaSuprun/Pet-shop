@@ -12,8 +12,7 @@ export class ViewBasket {
     </button>
     <div class="reveal" id="exampleModal1" data-reveal>
       <h1>Your purchases</h1>
-      <p class="lead">Your couch. It is mine.</p>
-      <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+      <p>Items reserved for limited time only</p>
 
       <button class="close-button" data-close aria-label="Close modal" type="button">
         <span aria-hidden="true">&times;</span>
@@ -23,7 +22,6 @@ export class ViewBasket {
   };
 
   changeCounter(counter) {
-    console.log(counter);
     let count = document.getElementById('quantity');
     count.innerHTML = `${counter}`;
   }

@@ -2,7 +2,7 @@ export class ModelCategories {
   constructor(controller) {
     this.controller = controller;
     this.data = JSON.parse(localStorage.getItem('products'));
-    this.setCategoriesToLS();
+    // this.setCategoriesToLS();
   };
 
   getAllCategories() {

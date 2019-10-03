@@ -1,13 +1,11 @@
 export class ModelBasket {
   constructor(controller) {
     this.controller = controller;
-    // this.basket = {};
+    // this.basket = JSON.parse(localStorage.getItem('basket'));
   };
 
   getPurchase() {
-    let data = JSON.parse(localStorage.getItem('productsBasket'));
-    // console.log(data);
-    return data;
+    console.log(JSON.parse(localStorage.getItem('basket')))
   };
 
 }

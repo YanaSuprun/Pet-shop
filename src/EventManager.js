@@ -1,4 +1,3 @@
-
 export class AppManager {
   init() {
     this.eventManager = new EventManager();
@@ -37,7 +36,7 @@ class AController {
     const data = this.model.getItem();
     this.view.render(data);
     
-    this.eventManager.on('updatedA', () => {
+    this.eventManager.on('click', () => {
       this.doSmth();
     });
   }

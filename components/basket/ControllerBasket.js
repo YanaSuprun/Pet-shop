@@ -10,12 +10,13 @@ export class ControllerBasket {
   };
 
   showBasket() {
-    let basketData = this.model.getPurchase();
     this.view.renderBasket();
+    
   };
 
   changeBasket(event) {
     this.view.changeCounter(this.productCounter+=1);
+    let basketData = this.model.getPurchase();
   };
 
 }
