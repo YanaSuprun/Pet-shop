@@ -8,7 +8,7 @@ export class AppController {
   constructor() {
     this.eventManager = new EventManager();
     this.controllerProduct = new ControllerProduct(this.eventManager);
-    // this.controllerSearch = new ControllerSearch(this.eventManager);
+    this.controllerSearch = new ControllerSearch(this.eventManager);
     this.controllerCategories = new ControllerCategories(this.eventManager);
     // this.controllerBasket = new ControllerBasket(this.eventManager);
   };

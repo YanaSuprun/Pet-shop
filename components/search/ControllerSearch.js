@@ -2,11 +2,11 @@ import {ViewSearch} from './ViewSearch.js';
 import {ModelSearch} from './ModelSearch.js';
 
 export class ControllerSearch {
-  constructor(router) {
-    this.router = router;
+  constructor(eventManager) {
+    this.eventManager = eventManager;
     this.model = new ModelSearch(this);
     this.view = new ViewSearch(this);
-    this.showSearch();
+    this.eventManager.subscribe('Products ready', this.showSearch.bind(this));
   };
 
   showSearch() {
@@ -16,6 +16,6 @@ export class ControllerSearch {
 
   showListOnInput(ev) {
     let data = this.model.getSearchedData(ev.target.value);
-    this.router.controllerProduct.showProducts(data);
+    this.eventManager.publish('Change product list', data);
   };
 }

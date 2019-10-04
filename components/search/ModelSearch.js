@@ -12,4 +12,4 @@ export class ModelSearch {
     }
     return data;
   };
-};
+}
