@@ -4,9 +4,14 @@ import {ModelCategories} from './ModelCategories.js';
 export class ControllerCategories {
   constructor(eventManager) {
     this.eventManager = eventManager;
-    this.model = new ModelCategories(this);
-    this.view = new ViewCategories(this);
+    this.model = new ModelCategories();
+    this.view = new ViewCategories();
+    this.init();
+  };
+
+  init() {
     this.eventManager.subscribe('Products ready', this.showCategories.bind(this));
+    this.view.getChosenCategory(this.showOneCategory.bind(this));
   };
 
   showCategories() {
@@ -18,6 +23,6 @@ export class ControllerCategories {
   showOneCategory(ev) {
     let pet = this.view.getTargetCategory(ev);
     let data = this.model.getOneCategory(pet);
-    this.eventManager.publish('Change product list', data);
+    this.eventManager.publish('Category selected', data);
   };
 }

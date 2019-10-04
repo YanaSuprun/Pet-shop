@@ -1,7 +1,10 @@
 export class ModelBasket {
   constructor(controller) {
     this.controller = controller;
-    // this.basket = JSON.parse(localStorage.getItem('basket'));
+    this.basket = {
+      counter: 0,
+      purchases: []
+    }
   };
 
   getPurchase() {

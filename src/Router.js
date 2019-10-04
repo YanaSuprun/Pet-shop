@@ -10,6 +10,6 @@ export class AppController {
     this.controllerProduct = new ControllerProduct(this.eventManager);
     this.controllerSearch = new ControllerSearch(this.eventManager);
     this.controllerCategories = new ControllerCategories(this.eventManager);
-    // this.controllerBasket = new ControllerBasket(this.eventManager);
+    this.controllerBasket = new ControllerBasket(this.eventManager);
   };
 }

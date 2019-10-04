@@ -1,22 +1,20 @@
 export class ModelProduct {
-  constructor(controller) {
-    this.controller = controller;
-    // let basket = localStorage.setItem('basket', JSON.stringify([]));
+  constructor() {
+    let basket = localStorage.setItem('basket', JSON.stringify([]));
   };
 
   getProduct() {
-    fetch('./data/goods.json')
+    return fetch('./data/goods.json')
       .then(data => data.json())
-      .then(arr => {
-        this.setAllProductsToLS(arr);
-        this.controller.notifyAboutEvent('Products ready')
-        this.controller.showProducts(arr);
+      .then(productsArray => {
+        this.setAllProductsToLS(productsArray);
+        return productsArray;
       }
     );
   };
 
-  setAllProductsToLS(arr) {
-    localStorage.setItem('products', JSON.stringify(arr));
+  setAllProductsToLS(productsArray) {
+    localStorage.setItem('products', JSON.stringify(productsArray));
   };
 
 

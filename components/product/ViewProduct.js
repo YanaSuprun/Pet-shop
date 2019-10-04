@@ -1,6 +1,5 @@
 export class ViewProduct {
-  constructor(controller) {
-    this.controller = controller;
+  constructor() {
     this.products = document.getElementById('products');
     // this.products.addEventListener('click', this.controller.getPurchase.bind(this.controller));
   }
@@ -22,7 +21,11 @@ export class ViewProduct {
         </div>`
       }).join('')}
     `
-  }
+  };
+
+  getPurchasevent(showListOnInput) {
+    document.addEventListener('input', showListOnInput);
+  };
 
   // changeButtonOnClick(targetElem) {
   //   targetElem.classList.add('alert');

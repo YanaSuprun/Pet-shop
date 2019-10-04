@@ -1,8 +1,6 @@
 export class ViewCategories {
-  constructor(controller) {
-    this.controller = controller;
+  constructor() {
     this.categories = document.getElementById('categories');
-    this.categories.addEventListener('click', this.controller.showOneCategory.bind(this.controller));
   };
 
   renderCategories(data) {
@@ -13,6 +11,10 @@ export class ViewCategories {
       }).join(' ')}
     `
   };
+
+  getChosenCategory(showOneCategory) {
+    this.categories.addEventListener('click', showOneCategory);
+  }
 
   getTargetCategory(ev) {
     let targetElem = ev.target;

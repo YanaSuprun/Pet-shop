@@ -1,8 +1,4 @@
 export class ModelSearch {
-  constructor(controller) {
-    this.controller = controller;
-  };
-
   getSearchedData(str) {
     const data = JSON.parse(localStorage.getItem('products'));
     const val = str.trim();

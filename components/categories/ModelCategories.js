@@ -1,8 +1,4 @@
 export class ModelCategories {
-  constructor(controller) {
-    this.controller = controller;
-  };
-
   getAllCategories() {
     this.data = JSON.parse(localStorage.getItem('products'));
     return [...new Set(this.data.map(elem => elem.type))];

@@ -1,6 +1,5 @@
 export class ViewSearch {
-  constructor(controller) {
-    this.controller = controller;
+  constructor() {
     this.search = document.getElementById('search');
   };
 
@@ -10,7 +9,7 @@ export class ViewSearch {
     `
   };
 
-  getInputEvent() {
-    document.addEventListener('input', this.controller.showListOnInput.bind(this.controller));
+  getInputEvent(showListOnInput) {
+    document.addEventListener('input', showListOnInput);
   };
 }
