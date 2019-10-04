@@ -10,8 +10,9 @@ export class ControllerBasket {
   };
 
   showBasket() {
+    let basketData = this.model.getPurchase();
+    console.log(basketData);
     this.view.renderBasket();
-    
   };
 
   changeBasket(event) {

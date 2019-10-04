@@ -1,5 +1,6 @@
-import {Router} from '../src/Router.js';
+import {AppController} from '../src/Router.js';
 
-const router = new Router();
+const appController = new AppController();
+// console.log('main')
 
 $(document).foundation();

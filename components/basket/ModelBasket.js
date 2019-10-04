@@ -5,7 +5,8 @@ export class ModelBasket {
   };
 
   getPurchase() {
-    console.log(JSON.parse(localStorage.getItem('basket')))
+    let data = JSON.parse(localStorage.getItem('basket'));
+    return data;
   };
 
 }

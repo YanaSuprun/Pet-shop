@@ -2,22 +2,22 @@ import {ViewCategories} from './ViewCategories.js';
 import {ModelCategories} from './ModelCategories.js';
 
 export class ControllerCategories {
-  constructor(router) {
-    this.router = router;
+  constructor(eventManager) {
+    this.eventManager = eventManager;
     this.model = new ModelCategories(this);
     this.view = new ViewCategories(this);
-    this.showCategories();
+    this.eventManager.subscribe('Products ready', this.showCategories.bind(this));
   };
 
   showCategories() {
     const categories = this.model.getAllCategories();
+    this.model.setCategoriesToLS(categories);
     this.view.renderCategories(categories);
   };
 
   showOneCategory(ev) {
     let pet = this.view.getTargetCategory(ev);
     let data = this.model.getOneCategory(pet);
-    this.router.controllerProduct.showProducts(data);
-    // this.router.controllerFilter.showFilter(data);
+    this.eventManager.publish('Change product list', data);
   };
 }

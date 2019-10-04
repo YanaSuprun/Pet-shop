@@ -2,7 +2,7 @@ export class ViewProduct {
   constructor(controller) {
     this.controller = controller;
     this.products = document.getElementById('products');
-    this.products.addEventListener('click', this.controller.getPurchase.bind(this.controller));
+    // this.products.addEventListener('click', this.controller.getPurchase.bind(this.controller));
   }
 
   renderProducts(data) {
@@ -24,8 +24,8 @@ export class ViewProduct {
     `
   }
 
-  changeButtonOnClick(targetElem) {
-    targetElem.classList.add('alert');
-    targetElem.innerHTML = 'Added';
-  }
+  // changeButtonOnClick(targetElem) {
+  //   targetElem.classList.add('alert');
+  //   targetElem.innerHTML = 'Added';
+  // }
 }

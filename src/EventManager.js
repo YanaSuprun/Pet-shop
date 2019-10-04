@@ -1,58 +1,24 @@
-export class AppManager {
-  init() {
-    this.eventManager = new EventManager();
-    this.controllerA = new Controller(this.eventManager);
-    this.controllerB = new Controller(this.eventManager);
-    
-    this.eventManager.on('updatedA', () => {
-      this.controllerA.doSmth();
-    });
-    this.eventManager.on('updatedB', () => {
-      this.controllerB.doSmth();
-    });
-    this.eventManager.on('other', () => {
-      this.controllerA.doOther();
-    });
+export class EventManager {
+  constructor() {
+    this.events = {};
   }
-}
-
-class EventManager {
-  on(eventName) {}
-  publish(eventName, data) {}
-  unsubscribe(eventName, handler) {}
-}
-
-
-//////////////////////////////////////////////////////
-
-class AController {
-  constructor (eventManager) {
-    this.eventManager = eventManager;
+  publish(eventName, data) {
+    const event = this.events[eventName];
+    if(event) {
+      event.forEach(fn => {
+        fn.call(null, data);
+      });
+    }
   }
-  init() {
-    this.view = new View();
-    this.model = new Model();
-    
-    const data = this.model.getItem();
-    this.view.render(data);
-    
-    this.eventManager.on('click', () => {
-      this.doSmth();
-    });
-  }
- 
-  doSmth() {}
-  doOther() {}
-  doSomthThatMayNotifyB() {
-    this.eventManager.publish('notifyB');
-  }
-}
 
+  subscribe(eventName, func) {
+    if (!this.events[eventName]) {
+      this.events[eventName] = [];
+    };
+    this.events[eventName].push(func);
+  };
 
-class AppController {
-  init() {
-    this.eventManager = new EventManager();
-    this.controllerA = new Controller(this.eventManager);
-    this.controllerB = new Controller(this.eventManager);
-  }
+  unsubscribe(eventName, fn) {
+    this.events[eventName] = this.events[eventName].filter(eventFn => fn !== eventFn);
+  };
 }
