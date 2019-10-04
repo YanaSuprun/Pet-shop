@@ -21,7 +21,6 @@ export class ControllerCategories {
 
   showOneCategory(pet) {
     let data = this.model.getChoosenCategory(pet);
-    this.eventManager.publish('productsSearch', data)
-    this.eventManager.publish('CategorySelected');
+    this.eventManager.publish('categorySelected', data)
   };
 }

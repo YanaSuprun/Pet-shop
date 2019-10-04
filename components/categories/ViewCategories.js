@@ -14,14 +14,11 @@ export class ViewCategories {
 
   getChosenCategory(showOneCategory) {
     this.categories.addEventListener('click', (ev) => {
-        let targetElem = ev.target;
-        if(targetElem.classList.contains('pets')) {
-            targetElem.classList.add('active-category');
-            showOneCategory(targetElem.textContent.toLowerCase());
-          };
+      let targetElem = ev.target;
+      if(targetElem.classList.contains('pets')) {
+        targetElem.classList.add('active-category');
+        showOneCategory(targetElem.textContent.toLowerCase());
+      };
     });
-  }
-
-  // getTargetCategory(ev) {
-  // };
+  };
 }
