@@ -11,7 +11,8 @@ export class ControllerProduct {
 
   init() {
     this.eventManager.subscribe('Category selected', this.showProducts.bind(this));
-    this.eventManager.subscribe('Search started', this.showProducts.bind(this));
+    // this.eventManager.subscribe('Search started', this.showProducts.bind(this));
+    this.eventManager.subscribe('productsForRender', this.showProducts.bind(this));
     
     // this.eventManager.subscribe('Category selected', (selectedCategory) => {
     //   this.selectedCategory = selectedCategory;
@@ -22,7 +23,7 @@ export class ControllerProduct {
 
   actionGetProduct() {
     this.model.getProduct().then(arr => {
-      this.eventManager.publish('Products ready');
+      this.eventManager.publish('productsReady', arr);
       this.showProducts(arr);
     });
   };

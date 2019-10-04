@@ -13,14 +13,15 @@ export class ViewCategories {
   };
 
   getChosenCategory(showOneCategory) {
-    this.categories.addEventListener('click', showOneCategory);
+    this.categories.addEventListener('click', (ev) => {
+        let targetElem = ev.target;
+        if(targetElem.classList.contains('pets')) {
+            targetElem.classList.add('active-category');
+            showOneCategory(targetElem.textContent.toLowerCase());
+          };
+    });
   }
 
-  getTargetCategory(ev) {
-    let targetElem = ev.target;
-    if(targetElem.classList.contains('pets')) {
-      targetElem.classList.add('active-category');
-      return targetElem.textContent.toLowerCase();
-    };
-  };
+  // getTargetCategory(ev) {
+  // };
 }

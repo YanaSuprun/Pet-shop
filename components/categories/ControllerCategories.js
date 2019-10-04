@@ -10,19 +10,18 @@ export class ControllerCategories {
   };
 
   init() {
-    this.eventManager.subscribe('Products ready', this.showCategories.bind(this));
+    this.eventManager.subscribe('productsReady', this.showCategories.bind(this));
     this.view.getChosenCategory(this.showOneCategory.bind(this));
   };
 
-  showCategories() {
-    const categories = this.model.getAllCategories();
-    this.model.setCategoriesToLS(categories);
+  showCategories(productsReady) {
+    const categories = this.model.getAllCategories(productsReady);
     this.view.renderCategories(categories);
   };
 
-  showOneCategory(ev) {
-    let pet = this.view.getTargetCategory(ev);
-    let data = this.model.getOneCategory(pet);
-    this.eventManager.publish('Category selected', data);
+  showOneCategory(pet) {
+    let data = this.model.getChoosenCategory(pet);
+    this.eventManager.publish('productsSearch', data)
+    this.eventManager.publish('CategorySelected');
   };
 }
