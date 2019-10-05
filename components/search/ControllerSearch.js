@@ -11,8 +11,8 @@ export class ControllerSearch {
 
   init() {
     this.view.renderSearch();
-    this.view.getInput(this.showListOnInput.bind(this));
     this.eventManager.subscribe('categorySelected', this.showListWithCategories.bind(this));
+    this.view.getInput(this.showListOnInput.bind(this));
   };
 
   showListOnInput(searchParam) {
@@ -24,6 +24,6 @@ export class ControllerSearch {
   showListWithCategories(productsCategory) {
     this.productsCategory = productsCategory;
     let data = this.model.getSearchedData(this.searchParam, this.productsCategory);
-    this.eventManager.publish('searchInCategories', data)
+    this.eventManager.publish('search', data)
   };
 }
