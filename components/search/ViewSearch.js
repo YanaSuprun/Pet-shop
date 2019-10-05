@@ -9,7 +9,9 @@ export class ViewSearch {
     `
   };
 
-  getInputEvent(showListOnInput) {
-    document.addEventListener('input', showListOnInput);
+  getInput(showListOnInput) {
+    document.addEventListener('input', (ev) => {
+      showListOnInput(ev.target.value)
+    });
   };
 }

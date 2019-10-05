@@ -10,9 +10,9 @@ export class ControllerProduct {
   };
 
   init() {
-    this.eventManager.subscribe('Category selected', this.showProducts.bind(this));
-    // this.eventManager.subscribe('Search started', this.showProducts.bind(this));
-    this.eventManager.subscribe('productsForRender', this.showProducts.bind(this));
+    this.eventManager.subscribe('categorySelected', this.showProducts.bind(this));
+    this.eventManager.subscribe('search', this.showProducts.bind(this));
+    this.eventManager.subscribe('searchInCategory', this.showProducts.bind(this));
     
     // this.eventManager.subscribe('Category selected', (selectedCategory) => {
     //   this.selectedCategory = selectedCategory;
