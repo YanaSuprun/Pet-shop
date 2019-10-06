@@ -9,21 +9,36 @@ export class ControllerSearch {
     this.init();
   };
 
+  // init() {
+  //   this.view.renderSearch();
+  //   this.eventManager.subscribe('categorySelected', this.showListWithCategories.bind(this));
+  //   this.view.getInput(this.showListOnInput.bind(this));
+  // };
+
+  // showListOnInput(searchParam) {
+  //   this.searchParam = searchParam;
+  //   let data = this.model.getSearchedData(this.searchParam, this.productsCategory);
+  //   this.eventManager.publish('search', data);
+  // };
+
+  // showListWithCategories(productsCategory) {
+  //   this.productsCategory = productsCategory;
+  //   let data = this.model.getSearchedData(this.searchParam, this.productsCategory);
+  //   this.eventManager.publish('search', data)
+  // };
+
   init() {
     this.view.renderSearch();
-    this.eventManager.subscribe('categorySelected', this.showListWithCategories.bind(this));
+    this.eventManager.subscribe('productsReady', this.startSearch.bind(this));
+  };
+
+  startSearch() {
     this.view.getInput(this.showListOnInput.bind(this));
   };
 
   showListOnInput(searchParam) {
     this.searchParam = searchParam;
-    let data = this.model.getSearchedData(this.searchParam, this.productsCategory);
-    this.eventManager.publish('search', data);
-  };
-
-  showListWithCategories(productsCategory) {
-    this.productsCategory = productsCategory;
-    let data = this.model.getSearchedData(this.searchParam, this.productsCategory);
-    this.eventManager.publish('search', data)
+    let data = this.model.getSearchedData(searchParam);
+    this.eventManager.publish('searchStarted', data);
   };
 }

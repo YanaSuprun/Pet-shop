@@ -8,47 +8,77 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <link rel="stylesheet" href="./style/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.js"></script>
 
 </head>
 
 <body>
-  <header></header>
-  <main>
-    <h1>Mi-Mi-Mi Shop</h1>
-
+  <header>
     <div class="row">
-      <div class="columns medium-5">
-        <div id="categories"></div>
-      </div>
+      <div class="nav">
+        <div class="columns medium-2">
+          <img class="logo" src="./data/img/logo.png" alt="logo">
+        </div>
+  
+        <div class="columns medium-5">
+          <div id="search"></div>
+        </div>
 
-      <div class="columns medium-6">
-        <div id="search"></div>
-      </div>
-      
+        <div class="columns medium-2">
+          <div id="sort">
+            <button class="hollow button sort-by-price">Price <i class="fas fa-arrow-down"></i></button>
+            <button class="hollow button sort-by-name">A-Z</button>
+          </div>
+        </div>
 
-      <div class="columns medium-1">
-        <div id="basket">
-          <button type="button" data-open="exampleModal1" class="button alert">
-            <i class="fas fa-shopping-cart"></i> 
-            <span id="quantity">0</span>
-          </button>
-          <div class="reveal" id="exampleModal1" data-reveal>
-            <h1>Your purchases</h1>
-            <p>Items reserved for limited time only</p>
+        <div class="columns medium-2">
+          <div class="contacts">
+            <p>Contact us:</p>
+            <span class="contacts-info"><i class="fas fa-phone"></i> +380000000000</span>
+            <span class="contacts-info"><i class="fas fa-envelope"></i> mail@mail.com</span>
+          </div>
+        </div>
 
-            <div id="purchases"></div>
-      
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-              <span aria-hidden="true">&times;</span>
+  
+        <div class="columns medium-1">
+          <div id="basket">
+            <button type="button" data-open="exampleModal1" class="button basket-button">
+              <i class="fas fa-shopping-cart"></i> 
+              <span id="quantity">0</span>
             </button>
+            <div class="reveal" id="exampleModal1" data-reveal>
+              <h1>Your purchases</h1>
+              <p>Items reserved for limited time only</p>
+
+              <div id="purchases"></div>
+        
+              <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </header>
+  <main>
 
-    <div id="products"></div>
+
+    <div class="row">
+      <div class="columns medium-1">
+        <p class="categories-header">Categories:</p>
+        <div id="categories"></div>
+      </div>
+
+      <div class="columns medium-11">
+        <div id="products"></div>
+      </div>
+
+    </div>
+
+    
 
   </main>
 

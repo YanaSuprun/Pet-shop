@@ -11,8 +11,8 @@ export class ViewProduct {
           <div class="card">
             <img src="${elem.url}">
             <div class="card-section">
-              <h4>${elem.name}</h4>
-              <h5>Price: ${elem.price}$</h5>
+              <h5 class="product-name">${elem.name}</h5>
+              <h5 class="product-price">Price: ${elem.price}$</h5>
               <p>Quantity: ${elem.quantity}</p>
               <p>Color: ${elem.color}</p>
             </div>
