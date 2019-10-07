@@ -5,7 +5,7 @@ import {ControllerSort} from '../components/sort/ControllerSort.js';
 import {ControllerCategories} from '../components/categories/ControllerCategories.js';
 import {ControllerBasket} from '../components/basket/ControllerBasket.js';
 
-export class AppController {
+export class ControllerApp {
   constructor() {
     this.eventManager = new EventManager();
     this.controllerProduct = new ControllerProduct(this.eventManager);
