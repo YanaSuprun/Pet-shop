@@ -13,7 +13,8 @@ export class ControllerProduct {
     this.eventManager.subscribe('categorySelected', this.showProducts.bind(this));
     this.eventManager.subscribe('searchStarted', this.showProducts.bind(this));
     this.eventManager.subscribe('sorted', this.showProducts.bind(this));
-    this.eventManager.subscribe('productsReady', this.getPurchases.bind(this));
+    this.eventManager.subscribe('productsRendered', this.getPurchaseAction.bind(this));
+    // this.eventManager.subscribe('productsRendered', this.view.getPurchasesEvent());
     this.actionGetProduct();
   }
 
@@ -21,6 +22,7 @@ export class ControllerProduct {
     this.model.getProduct().then(arr => {
       this.eventManager.publish('productsReady', arr);
       this.showProducts(arr);
+      this.eventManager.publish('productsRendered', arr);
     });
   };
 
@@ -28,22 +30,18 @@ export class ControllerProduct {
     this.view.renderProducts(data);
   };
 
-  getPurchases() {
-    // this.view.getPurchasesAction(data);
-    // this.view.getChoosenSort(this.getPurchasesData.bind(this));
+  getPurchaseAction() {
+    this.view.getPurchasesEvent(this.getPurchaseData.bind(this));
   };
 
-  // changeLS(data) {
-  //   console.log('ls')
-  //   this.model.setAllProductsToLS(data)
-  // }
-
-  // getPurchase(ev) {
-  //   let targetElem = ev.target;
-  //   if(targetElem.classList.contains('purchase')) {
-  //     this.view.changeButtonOnClick(targetElem);
-  //     this.model.setPurchaseToLS(targetElem);
-  //     this.eventManager.controllerBasket.changeBasket(ev);
-  //   };
-  // };
+  getPurchaseData(ev) {
+    console.log(ev.target);
+    this.eventManager.publish('productAddedToBasket');
+    // let targetElem = ev.target;
+    // if(targetElem.classList.contains('purchase')) {
+    //   this.view.changeButtonOnClick(targetElem);
+    //   this.model.setPurchaseToLS(targetElem);
+    //   this.eventManager.controllerBasket.changeBasket(ev);
+    // };
+  };
 }

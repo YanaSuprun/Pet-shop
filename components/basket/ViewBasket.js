@@ -6,7 +6,7 @@ export class ViewBasket {
   renderBasket(quant = 0) {
     console.log(this.basket)
     this.basket.innerHTML = `
-    <button type="button" data-open="exampleModal1" class="button alert">
+    <button type="button" data-open="exampleModal1" class="button basket-button">
       <i class="fas fa-shopping-cart"></i> 
       <span id="quantity">${quant}</span>
     </button>
@@ -23,9 +23,9 @@ export class ViewBasket {
     `
   };
 
-  // changeCounter(counter) {
-  //   let count = document.getElementById('quantity');
-  //   count.innerHTML = `${counter}`;
-  // };
+  changeCounter(counter) {
+    let count = document.getElementById('quantity');
+    count.innerHTML = `${counter}`;
+  };
 
 }

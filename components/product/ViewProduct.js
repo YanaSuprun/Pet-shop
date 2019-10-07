@@ -1,7 +1,7 @@
 export class ViewProduct {
   constructor() {
     this.products = document.getElementById('products');
-  }
+  };
 
   renderProducts(data) {
     this.products.innerHTML = `
@@ -22,9 +22,11 @@ export class ViewProduct {
     `
   };
 
-  getPurchasesAction(showListOnInput) {
-    document.addEventListener('input', showListOnInput);
-    targetElem.classList.add('alert');
-    targetElem.innerHTML = 'Added';
+  getPurchasesEvent(getPurchaseData) {
+    this.products.addEventListener('click', (ev) => {
+      getPurchaseData(ev);
+      ev.target.classList.add('alert');
+      ev.target.innerHTML = 'Added';
+    });
   };
 }
