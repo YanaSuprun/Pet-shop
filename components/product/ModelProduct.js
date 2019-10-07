@@ -4,7 +4,7 @@ export class ModelProduct {
   };
 
   getProduct() {
-    return fetch('./data/goods.json')
+    return fetch('./data/goods.json', {cache: 'force-cache'})
       .then(data => data.json())
       .then(productsArray => {
         this.setAllProductsToLS(productsArray);
