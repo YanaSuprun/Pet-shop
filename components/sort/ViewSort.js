@@ -18,14 +18,14 @@ export class ViewSort {
         ev.target.classList.toggle('price-down');
         ev.target.classList.toggle('price-up');
         ev.target.lastChild.classList.toggle('fa-arrow-down');
-        ev.target.lastChild.classList.toggle('fa-arrow-up')
+        ev.target.lastChild.classList.toggle('fa-arrow-up');
       };
 
       if (ev.target.classList.contains('sort-by-name')) {
         ev.target.classList.toggle('name-down');
         ev.target.classList.toggle('name-up');
         ev.target.lastChild.classList.toggle('fa-sort-alpha-down');
-        ev.target.lastChild.classList.toggle('fa-sort-alpha-up')
+        ev.target.lastChild.classList.toggle('fa-sort-alpha-up');
       };
     });
   };
