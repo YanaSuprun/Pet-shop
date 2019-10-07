@@ -12,7 +12,7 @@ export class ControllerProduct {
   init() {
     this.eventManager.subscribe('categorySelected', this.showProducts.bind(this), this.changeLS.bind(this));
     this.eventManager.subscribe('searchStarted', this.showProducts.bind(this));
-    // this.eventManager.subscribe('searchInCategory', this.showProducts.bind(this));
+    this.eventManager.subscribe('sorted', this.showProducts.bind(this));
     
     // this.eventManager.subscribe('Category selected', (selectedCategory) => {
     //   this.selectedCategory = selectedCategory;
