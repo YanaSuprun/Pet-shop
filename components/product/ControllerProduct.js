@@ -10,14 +10,10 @@ export class ControllerProduct {
   };
 
   init() {
-    this.eventManager.subscribe('categorySelected', this.showProducts.bind(this), this.changeLS.bind(this));
+    this.eventManager.subscribe('categorySelected', this.showProducts.bind(this));
     this.eventManager.subscribe('searchStarted', this.showProducts.bind(this));
     this.eventManager.subscribe('sorted', this.showProducts.bind(this));
-    
-    // this.eventManager.subscribe('Category selected', (selectedCategory) => {
-    //   this.selectedCategory = selectedCategory;
-      
-    // });
+    this.eventManager.subscribe('productsReady', this.getPurchases.bind(this));
     this.actionGetProduct();
   }
 
@@ -32,10 +28,15 @@ export class ControllerProduct {
     this.view.renderProducts(data);
   };
 
-  changeLS(data) {
-    console.log('ls')
-    this.model.setAllProductsToLS(data)
-  }
+  getPurchases() {
+    // this.view.getPurchasesAction(data);
+    // this.view.getChoosenSort(this.getPurchasesData.bind(this));
+  };
+
+  // changeLS(data) {
+  //   console.log('ls')
+  //   this.model.setAllProductsToLS(data)
+  // }
 
   // getPurchase(ev) {
   //   let targetElem = ev.target;
