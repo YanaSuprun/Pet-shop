@@ -27,7 +27,7 @@ export class ControllerBasket {
   };
 
   changeBasket(event) {
-    this.view.changeCounter(this.productCounter+=1);
+    this.view.changeCounter(this.productCounter++);
     // let basketData = this.model.getPurchase();
   };
 

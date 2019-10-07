@@ -1,6 +1,6 @@
 export class ModelSort {
   sortByPrice(param) {
-    const data = JSON.parse(localStorage.getItem('products'));
+    const data = this.getData();
     if(param.classList.contains('price-down')) {
       return data.sort((a, b) => Number(b.price) - Number(a.price));
     };
@@ -8,7 +8,7 @@ export class ModelSort {
   };
 
   sortByName(param, isAsc = true) {
-    const data = JSON.parse(localStorage.getItem('products'));
+    const data = this.getData();
     if(param.classList.contains('name-up')) {
       isAsc = false;
     };
@@ -18,4 +18,8 @@ export class ModelSort {
       return (nameA < nameB ? -1 : 1 ) * (isAsc ? 1 : -1);
     });
   };
+
+  getData() {
+    return JSON.parse(localStorage.getItem('products'));
+  }
 }

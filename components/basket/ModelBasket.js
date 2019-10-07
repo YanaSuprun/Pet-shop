@@ -1,6 +1,6 @@
 export class ModelBasket {
   constructor(controller) {
-    this.controller = controller;
+    // this.controller = controller;
     this.basket = {
       counter: 0,
       purchases: []
