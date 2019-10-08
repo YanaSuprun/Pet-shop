@@ -20,9 +20,5 @@ export class ViewCategories {
         showOneCategory(targetElem.textContent.toLowerCase());
       };
     });
-
-    return () => {
-      this.categories.removeEventListener('click', showOneCategory);
-    };
   };
 }

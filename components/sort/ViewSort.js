@@ -28,9 +28,5 @@ export class ViewSort {
         ev.target.lastChild.classList.toggle('fa-sort-alpha-up');
       };
     });
-
-    return () => {
-      this.sort.removeEventListener('click', startSort);
-    };
   };
 }
