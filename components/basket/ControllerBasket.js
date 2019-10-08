@@ -11,24 +11,16 @@ export class ControllerBasket {
   };
 
   init() {
-    this.eventManager.subscribe('productsReady', this.showBasket.bind(this));
     this.eventManager.subscribe('productAddedToBasket', this.changeBasket.bind(this));
-  }
-
-  // changeBasketView() {
-  //   let basketData = 'ok';
-  //   let counter = 0;
-    
-  //   this.view.renderNewBasket(basketData, counter);
-  // }
+  };
 
   showBasket() {
     this.view.renderBasket();
   };
 
   changeBasket(event) {
-    this.view.changeCounter(this.productCounter++);
-    // let basketData = this.model.getPurchase();
+    this.view.changeCounter(++this.productCounter);
+    let data = this.model.getPurchase();
+    this.view.renderProductList(data);
   };
-
 }

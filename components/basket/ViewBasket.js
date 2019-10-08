@@ -3,29 +3,39 @@ export class ViewBasket {
     this.basket = document.getElementById('basket');
   };
 
-  renderBasket(quant = 0) {
-    console.log(this.basket)
-    this.basket.innerHTML = `
-    <button type="button" data-open="exampleModal1" class="button basket-button">
-      <i class="fas fa-shopping-cart"></i> 
-      <span id="quantity">${quant}</span>
-    </button>
-    <div class="reveal" id="exampleModal1" data-reveal>
-      <h1>Your purchases</h1>
-      <p>Items reserved for limited time only</p>
-
-      <div id="purchases"></div>
-
-      <button class="close-button" data-close aria-label="Close modal" type="button">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    `
-  };
-
   changeCounter(counter) {
     let count = document.getElementById('quantity');
     count.innerHTML = `${counter}`;
   };
 
+  renderProductList(data) {
+    let purchases = document.getElementById('purchases');
+    purchases.innerHTML = `
+    <p>Items reserved for limited time only</p>
+    <table>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Add</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Price</th>
+        <th>Total price</th>
+      </tr>
+      
+      ${data.map(elem => {
+        return `<tr>
+          <th><img src='${elem.url}'></th>
+          <th>${elem.name}</th>
+          <th><button>+</button></th>
+          <th>1</th>
+          <th><button>-</button></th>
+          <th>${elem.price}</th>
+          <th>${elem.quantity * elem.price}</th>
+        </tr>
+        `
+      }).join('')}
+    </table>
+    `
+  };
 }

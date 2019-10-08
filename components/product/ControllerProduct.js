@@ -34,8 +34,8 @@ export class ControllerProduct {
     this.view.getPurchasesEvent(this.getPurchaseData.bind(this));
   };
 
-  getPurchaseData(ev) {
-    console.log(ev.target);
+  getPurchaseData(targetElem) {
+    this.model.setPurchaseToLS(targetElem);
     this.eventManager.publish('productAddedToBasket');
     // let targetElem = ev.target;
     // if(targetElem.classList.contains('purchase')) {

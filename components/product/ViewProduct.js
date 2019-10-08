@@ -24,9 +24,13 @@ export class ViewProduct {
 
   getPurchasesEvent(getPurchaseData) {
     this.products.addEventListener('click', (ev) => {
-      getPurchaseData(ev);
+      getPurchaseData(ev.target);
       ev.target.classList.add('alert');
       ev.target.innerHTML = 'Added';
     });
+
+    return () => {
+      this.products.removeEventListener('click', getPurchaseData);
+    };
   };
 }

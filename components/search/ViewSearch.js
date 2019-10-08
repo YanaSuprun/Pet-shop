@@ -10,8 +10,12 @@ export class ViewSearch {
   };
 
   getInput(showListOnInput) {
-    document.addEventListener('input', (ev) => {
+    this.search.addEventListener('input', (ev) => {
       showListOnInput(ev.target.value)
     });
+
+    return () => {
+      this.search.removeEventListener('input', showListOnInput);
+    };
   };
 }
