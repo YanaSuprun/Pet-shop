@@ -32,6 +32,5 @@ export class ControllerBasket {
 
   getBasket(ev) {
     this.model.getBasketData();
-
   }
 }
