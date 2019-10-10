@@ -14,9 +14,8 @@ export class ControllerProduct {
     this.eventManager.subscribe('searchStarted', this.showProducts.bind(this));
     this.eventManager.subscribe('sorted', this.showProducts.bind(this));
     this.eventManager.subscribe('productsRendered', this.getPurchaseAction.bind(this));
-    // this.eventManager.subscribe('productsRendered', this.view.getPurchasesEvent());
     this.actionGetProduct();
-  }
+  };
 
   actionGetProduct() {
     this.model.getProduct().then(arr => {
@@ -37,11 +36,5 @@ export class ControllerProduct {
   getPurchaseData(targetElem) {
     this.model.setPurchaseToLS(targetElem);
     this.eventManager.publish('productAddedToBasket');
-    // let targetElem = ev.target;
-    // if(targetElem.classList.contains('purchase')) {
-    //   this.view.changeButtonOnClick(targetElem);
-    //   this.model.setPurchaseToLS(targetElem);
-    //   this.eventManager.controllerBasket.changeBasket(ev);
-    // };
   };
 }

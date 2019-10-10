@@ -27,15 +27,23 @@ export class ViewBasket {
         return `<tr>
           <th><img src='${elem.url}'></th>
           <th>${elem.name}</th>
-          <th><button>+</button></th>
-          <th>1</th>
-          <th><button>-</button></th>
+          <th><button class="button-increase">+</button></th>
+          <th>${elem.purchase}</th>
+          <th><button class="button-increase">-</button></th>
           <th>${elem.price}</th>
-          <th>${elem.quantity * elem.price}</th>
+          <th>${elem.purchase * elem.price}</th>
         </tr>
         `
       }).join('')}
     </table>
+    <button class="button alert" id="button-buy">Buy</button>
     `
   };
+
+  getBuyEvent(getBasket) {
+    let buy = document.getElementById('button-buy');
+    buy.addEventListener('click', (ev) => {
+      getBasket();
+    })
+  }
 }

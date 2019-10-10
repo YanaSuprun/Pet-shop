@@ -1,6 +1,6 @@
 export class ModelProduct {
   constructor() {
-    let basket = localStorage.setItem('basket', JSON.stringify([]));
+    // let basket = localStorage.setItem('basket', JSON.stringify([]));
   };
 
   getProduct() {
@@ -13,22 +13,30 @@ export class ModelProduct {
     );
   };
 
+
   setAllProductsToLS(productsArray) {
     localStorage.setItem('products', JSON.stringify(productsArray));
-    this.createProductsForBasket();
   };
 
 
   setPurchaseToLS(targetElem) {
-    const storedBasket = JSON.parse(localStorage.getItem('basket'));
-    const allProducts = JSON.parse(localStorage.getItem('productsForBasket'));
-    const purchase = allProducts.filter(elem => elem.id === Number(targetElem.id));
-    let actualBasket = [...storedBasket, ...purchase];
-    localStorage.setItem('basket', JSON.stringify(actualBasket));
-  };
+    let storedBasket = JSON.parse(localStorage.getItem('basket')) || [];
+    const allProducts = JSON.parse(localStorage.getItem('products'));
 
-  createProductsForBasket() {
-    let data =  JSON.parse(localStorage.getItem('products'));
-    localStorage.setItem('productsForBasket', JSON.stringify(data));
-  }
+    allProducts.forEach(elem => {
+      if(elem.id === Number(targetElem.id) && elem.quantity > 0) {
+        if(elem.purchase) {
+          elem.purchase += 1;
+          storedBasket.forEach(el => el.id === elem.id && ++el.purchase);
+        } else {
+          elem.purchase = 1;
+          storedBasket.push(elem);
+        };
+
+        localStorage.setItem('basket', JSON.stringify(storedBasket));
+        elem.quantity -=1;
+        localStorage.setItem('products', JSON.stringify(allProducts));
+      };
+    });
+  };
 }

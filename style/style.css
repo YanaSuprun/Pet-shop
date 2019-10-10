@@ -90,3 +90,8 @@ header .row::after {
 .sort-by-price {
   margin-right: 10px;
 }
+
+.button-buy {
+  background-color: green;
+  text-align: center;
+}

@@ -12,6 +12,7 @@ export class ControllerBasket {
 
   init() {
     this.eventManager.subscribe('productAddedToBasket', this.changeBasket.bind(this));
+    this.eventManager.subscribe('productAddedToBasket', this.startDeal.bind(this));
   };
 
   showBasket() {
@@ -19,8 +20,18 @@ export class ControllerBasket {
   };
 
   changeBasket(event) {
-    this.view.changeCounter(++this.productCounter);
     let data = this.model.getPurchase();
+    let counter = data.map(a => a.purchase).reduce((a, b) => a + b);
+    this.view.changeCounter(counter);
     this.view.renderProductList(data);
   };
+
+  startDeal() {
+    this.view.getBuyEvent(this.getBasket.bind(this));
+  }
+
+  getBasket(ev) {
+    this.model.getBasketData();
+
+  }
 }

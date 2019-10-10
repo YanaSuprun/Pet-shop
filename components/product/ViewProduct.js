@@ -28,9 +28,5 @@ export class ViewProduct {
       ev.target.classList.add('alert');
       ev.target.innerHTML = 'Added';
     });
-
-    return () => {
-      this.products.removeEventListener('click', getPurchaseData);
-    };
   };
 }
