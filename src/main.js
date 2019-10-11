@@ -1,4 +1,4 @@
-import {ControllerApp} from '../src/ControllerApp.js';
+import {ControllerApp} from './ControllerApp.js';
 
 const controllerApp = new ControllerApp();
 

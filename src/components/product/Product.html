@@ -1,10 +1,12 @@
 <div class="columns medium-3">
   <div class="card">
-    <img src="{{ url }}">
+    <img src="{{ url }}" alt="{{ name }}">
     <div class="card-section">
-      <h4>{{ name }}</h4>
-      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+      <h5 class="product-name">{{ name }}</h5>
+      <h5 class="product-price">Price: {{ elem.price }}$</h5>
+      <p>Quantity: {{ quantity }}</p>
+      <p>Color: {{ color }}</p>
     </div>
-    <button class="hollow button">Add to basket</button>
+    <button elem="{{ elem }}" id="{{ id }}"class="purchase hollow button">Add to basket</button>
   </div>
 </div>

@@ -7,16 +7,16 @@ export class ControllerSort {
     this.model = new ModelSort();
     this.view = new ViewSort();
     this.init();
-  };
+  }
 
   init() {
     this.view.renderSort();
     this.eventManager.subscribe('productsReady', this.getSort.bind(this));
-  };
+  }
 
   getSort() {
     this.view.getChoosenSort(this.startSort.bind(this));
-  };
+  }
 
   startSort(targetButton) {
     let data;
@@ -24,7 +24,7 @@ export class ControllerSort {
       data = this.model.sortByPrice(targetButton);
     } else if(targetButton.classList.contains('sort-by-name')) {
       data = this.model.sortByName(targetButton);
-    };
+    }
     this.eventManager.publish('sorted', data);
-  };
+  }
 }

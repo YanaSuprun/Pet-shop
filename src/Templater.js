@@ -1,15 +1,43 @@
 export class Templater {
-  constructor(url){
-    fetch(url).then(resp => resp.text()).then(result => {
-      this.template = result;
+  constructor(link) {
+    this.elements = [];
+    this.isCatch = false;
+    this.isLoad = false;
+
+    fetch(link)
+      .then(response => response.text())
+      .then(result => {
+        this.template = result;
+        this.isLoad = true;
+        this.isCatch ? this.render() : null;
     });
   }
 
-  load(obj, dom) {
-    let answ = this.template;
-    for(let key in obj){
-      answ = answ.replace(`{{ ${key} }}`, obj[key]);
+  load(objProduct, domNode) {
+    if(this.isLoad) {
+      this.show(objProduct, domNode);
+    } else {
+      this.isCatch = true;
+      this.elements.push({
+        objProduct, 
+        domNode
+      });
     }
-    dom.innerHTML += answ;
+  }
+
+  render() {
+    this.elements.forEach(({objProduct, domNode}) => {
+      this.show(objProduct, domNode);
+    });
+  }
+
+  show(objProduct, domNode) {
+    const node = domNode;
+    let stringHTML = this.template;
+    for(const key in objProduct) {
+      const regexp = new RegExp(`{{ ${key} }}`, 'gi');
+      stringHTML = stringHTML.replace(regexp, objProduct[key]);
+    }
+    node.innerHTML += stringHTML;
   }
 }

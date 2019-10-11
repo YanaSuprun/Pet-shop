@@ -2,7 +2,7 @@ export class ModelCategories {
   getAllCategories(productsReady) {
     this.data = productsReady;
     return [...new Set(productsReady.map(elem => elem.type))];
-  };
+  }
 
   getChoosenCategory(pet) {
     if(pet !== 'all') {
@@ -10,7 +10,5 @@ export class ModelCategories {
       return choosenCategory;
     }
     return this.data;
-  };
+  }
 }
-
-

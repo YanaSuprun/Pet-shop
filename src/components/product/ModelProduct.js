@@ -1,8 +1,4 @@
 export class ModelProduct {
-  constructor() {
-    // let basket = localStorage.setItem('basket', JSON.stringify([]));
-  };
-
   getProduct() {
     return fetch('./data/goods.json', {cache: 'force-cache'})
       .then(data => data.json())
@@ -11,12 +7,11 @@ export class ModelProduct {
         return productsArray;
       }
     );
-  };
-
+  }
 
   setAllProductsToLS(productsArray) {
     localStorage.setItem('products', JSON.stringify(productsArray));
-  };
+  }
 
 
   setPurchaseToLS(targetElem) {
@@ -31,12 +26,12 @@ export class ModelProduct {
         } else {
           elem.purchase = 1;
           storedBasket.push(elem);
-        };
+        }
 
         localStorage.setItem('basket', JSON.stringify(storedBasket));
         elem.quantity -=1;
         localStorage.setItem('products', JSON.stringify(allProducts));
-      };
+      }
     });
-  };
+  }
 }

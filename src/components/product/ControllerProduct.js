@@ -7,7 +7,7 @@ export class ControllerProduct {
     this.model = new ModelProduct();
     this.view = new ViewProduct();
     this.init();
-  };
+  }
 
   init() {
     this.eventManager.subscribe('categorySelected', this.showProducts.bind(this));
@@ -15,7 +15,7 @@ export class ControllerProduct {
     this.eventManager.subscribe('sorted', this.showProducts.bind(this));
     this.eventManager.subscribe('productsRendered', this.getPurchaseAction.bind(this));
     this.actionGetProduct();
-  };
+  }
 
   actionGetProduct() {
     this.model.getProduct().then(arr => {
@@ -23,18 +23,18 @@ export class ControllerProduct {
       this.showProducts(arr);
       this.eventManager.publish('productsRendered', arr);
     });
-  };
+  }
 
   showProducts(data) {
     this.view.renderProducts(data);
-  };
+  }
 
   getPurchaseAction() {
     this.view.getPurchasesEvent(this.getPurchaseData.bind(this));
-  };
+  }
 
   getPurchaseData(targetElem) {
     this.model.setPurchaseToLS(targetElem);
     this.eventManager.publish('productAddedToBasket');
-  };
+  }
 }

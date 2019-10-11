@@ -1,12 +1,12 @@
 export class ViewBasket {
   constructor() {
     this.basket = document.getElementById('basket');
-  };
+  }
 
   changeCounter(counter) {
     let count = document.getElementById('quantity');
     count.innerHTML = `${counter}`;
-  };
+  }
 
   renderProductList(data) {
     let purchases = document.getElementById('purchases');
@@ -38,12 +38,12 @@ export class ViewBasket {
     </table>
     <button class="button alert" id="button-buy">Buy</button>
     `
-  };
+  }
 
   getBuyEvent(getBasket) {
     let buy = document.getElementById('button-buy');
     buy.addEventListener('click', (ev) => {
       getBasket();
-    })
+    });
   }
 }

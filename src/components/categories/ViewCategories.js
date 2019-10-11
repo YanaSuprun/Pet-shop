@@ -1,7 +1,7 @@
 export class ViewCategories {
   constructor() {
     this.categories = document.getElementById('categories');
-  };
+  }
 
   renderCategories(data) {
     this.categories.innerHTML = `
@@ -10,7 +10,7 @@ export class ViewCategories {
         return `<button class="hollow button pets">${elem.toUpperCase()}</button>`
       }).join(' ')}
     `
-  };
+  }
 
   getChosenCategory(showOneCategory) {
     this.categories.addEventListener('click', (ev) => {
@@ -18,7 +18,7 @@ export class ViewCategories {
       if(targetElem.classList.contains('pets')) {
         targetElem.classList.add('active-category');
         showOneCategory(targetElem.textContent.toLowerCase());
-      };
+      }
     });
-  };
+  }
 }

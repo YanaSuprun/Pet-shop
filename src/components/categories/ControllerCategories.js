@@ -7,20 +7,20 @@ export class ControllerCategories {
     this.model = new ModelCategories();
     this.view = new ViewCategories();
     this.init();
-  };
+  }
 
   init() {
     this.eventManager.subscribe('productsReady', this.showCategories.bind(this));
     this.view.getChosenCategory(this.showOneCategory.bind(this));
-  };
+  }
 
   showCategories(productsReady) {
     const categories = this.model.getAllCategories(productsReady);
     this.view.renderCategories(categories);
-  };
+  }
 
   showOneCategory(pet) {
     let data = this.model.getChoosenCategory(pet);
-    this.eventManager.publish('categorySelected', data)
-  };
+    this.eventManager.publish('categorySelected', data);
+  }
 }
